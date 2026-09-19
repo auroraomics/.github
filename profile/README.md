@@ -2,9 +2,13 @@
 
 **Virtual spatial transcriptomics from H&E images.**
 
-Virtual spatial transcriptomics is predicted, spatially resolved gene expression
-from H&E images. Aurora returns it on the slide's own coordinates as one
-transcriptome-wide matrix. No spatial assay is run.
+Spatial transcriptomics is costly and low-throughput, so it reaches only a small
+fraction of routine histology and the molecular state of disease goes unmeasured
+in most patients.
+
+Aurora predicts it instead. DeepSpot-M reads an H&E slide and returns
+transcriptome-wide expression on that slide's own coordinates. No assay is run,
+and no tissue is consumed.
 
 Most programmes hold H&E for every case and spatial data for almost none. Start
 from the slides you already hold. Screen them, then spend the next assay where
