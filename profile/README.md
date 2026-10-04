@@ -5,20 +5,23 @@
 Aurora predicts spatial gene expression from routine H&E images, helping
 researchers explore molecular patterns across samples, cohorts and disease.
 
-## What you can do
+## Turn more tissue into better decisions
 
-- [Explore the whole archive on the same predicted genes](https://auroraomics.org/use-cases/annotate-an-archive),
-  and keep measured follow-up for the hypotheses that survive.
-- [Rank the candidate samples on predicted expression](https://auroraomics.org/use-cases/choose-what-to-sequence),
-  and choose where each capture area goes.
-- [Add the sample's bulk RNA profile to the prediction for its slide](https://auroraomics.org/use-cases/add-a-bulk-profile),
-  and keep the same genes and file format.
-- [Predict the genes your panel left out](https://auroraomics.org/use-cases/extend-a-panel),
-  on the spots it measured, then choose which leads to validate.
-- [Adapt the model to your protocol from a few measured slides](https://auroraomics.org/use-cases/adapt-to-your-cohort),
-  or restore genes that failed quality control as labelled predictions.
+- **Find patterns at cohort scale.** Explore virtual molecular variation across
+  samples and biological groups.
+- **Understand what drives the biology.** Investigate heterogeneity, subgroups,
+  biomarkers, mechanisms and therapeutic response.
+- **Prioritise what to pursue.** Focus validation and experimental effort on the
+  signals, samples and hypotheses that matter most.
 
-[Explore research applications](https://auroraomics.org/use-cases) on the website.
+## Past tissue. Future questions.
+
+A cohort assembled years ago can meet a question that emerged yesterday. Aurora
+gives archived slides a virtual molecular view, so tissue already in the drawer
+can shape the studies still to come.
+
+[Explore research applications](https://auroraomics.org/use-cases) on the
+website.
 
 ## Where to start
 
@@ -26,33 +29,18 @@ researchers explore molecular patterns across samples, cohorts and disease.
   email address, with no code and no account.
   [Submit images for analysis](https://auroraomics.org/upload), or
   [explore the example slide](https://auroraomics.org/demo).
-- **Work from code** with [Aurora Docs](https://docs.auroraomics.org). The API
-  and the Python package let you submit samples and read predictions without
-  the browser.
-- **[deepspot-h-quickstart](https://github.com/auroraomics/deepspot-h-quickstart)**
-  runs DeepSpot-H on one H&E slide, on your own machine.
-- **[deepspot-m-quickstart](https://github.com/auroraomics/deepspot-m-quickstart)**
-  follows one H&E slide to its predicted spatial gene expression, and explores
-  the result.
+- **Work from code** with [Aurora Docs](https://docs.auroraomics.org), or start
+  from a worked example:
+  [deepspot-m-quickstart](https://github.com/auroraomics/deepspot-m-quickstart)
+  follows one H&E slide to its predicted spatial gene expression, and
+  [deepspot-h-quickstart](https://github.com/auroraomics/deepspot-h-quickstart)
+  keeps your slides with you.
 
-## The models behind a prediction
+Two models make each prediction. DeepSpot-H reads the tissue's structure in
+each part of the slide, so DeepSpot-M can predict spatial gene expression there.
+[Read the paper](https://www.medrxiv.org/content/10.64898/2026.06.19.26356060v1).
 
-**DeepSpot-H** is the foundation model for H&E images.
-[Learn about DeepSpot-H](https://docs.auroraomics.org/models/deepspot-h/).
-
-**DeepSpot-M** is the model that predicts spatial gene expression.
-[Learn about DeepSpot-M](https://docs.auroraomics.org/models/deepspot-m/), or
-[read the paper](https://www.medrxiv.org/content/10.64898/2026.06.19.26356060v1).
-
-## Choose the workflow that fits your research
-
-- **[Send your slides](https://docs.auroraomics.org/quickstart/).** Prepare
-  your H&E slide on your own machine and send its tiles.
-- **[Your slides stay with you](https://docs.auroraomics.org/guides/embeddings/).**
-  Run DeepSpot-H on your own machine and send the numbers it produces.
-
-[From slide to result](https://docs.auroraomics.org/first-prediction/) follows
-one H&E slide to its spatial gene expression result.
+**The tissue is already here. A new layer of biology is within reach.**
 
 ---
 
