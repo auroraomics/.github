@@ -1,117 +1,60 @@
 # Aurora
 
-**Virtual spatial transcriptomics from H&E images.**
+**Building the virtual molecular layer for tissue biology.**
 
-Spatial transcriptomics is costly and low-throughput, so it reaches only a small
-fraction of routine histology and the molecular state of disease goes unmeasured
-in most patients.
+Aurora predicts spatial gene expression from routine H&E images, helping
+researchers explore molecular patterns across samples, cohorts and disease.
 
-Aurora predicts it instead. DeepSpot-M reads an H&E slide and returns
-transcriptome-wide expression on that slide's own coordinates. No assay is run,
-and no tissue is consumed.
+## What you can do
 
-Most programmes hold H&E for every case and spatial data for almost none. Start
-from the slides you already hold. Screen them, then spend the next assay where
-the question is sharpest.
+- [Explore the whole archive on the same predicted genes](https://auroraomics.org/use-cases/annotate-an-archive),
+  and keep measured follow-up for the hypotheses that survive.
+- [Rank the candidate samples on predicted expression](https://auroraomics.org/use-cases/choose-what-to-sequence),
+  and choose where each capture area goes.
+- [Add the sample's bulk RNA profile to the prediction for its slide](https://auroraomics.org/use-cases/add-a-bulk-profile),
+  and keep the same genes and file format.
+- [Predict the genes your panel left out](https://auroraomics.org/use-cases/extend-a-panel),
+  on the spots it measured, then choose which leads to validate.
+- [Adapt the model to your protocol from a few measured slides](https://auroraomics.org/use-cases/adapt-to-your-cohort),
+  or restore genes that failed quality control as labelled predictions.
 
-Aurora is a research platform built on research from ETH Zurich, the University
-of Zurich and the University of Basel.
+[Explore research applications](https://auroraomics.org/use-cases) on the website.
 
-A prediction is a hypothesis about what an assay would have measured. It is not
-a measurement, it is not evidence about a patient, and it has no clinical use.
+## Where to start
 
-## Start here
+- **Upload a slide on the website.** Aurora Direct takes an H&E image and an
+  email address, with no code and no account.
+  [Submit images for analysis](https://auroraomics.org/upload), or
+  [explore the example slide](https://auroraomics.org/demo).
+- **Work from code** with [Aurora Docs](https://docs.auroraomics.org). The API
+  and the Python package let you submit samples and read predictions without
+  the browser.
+- **[deepspot-h-quickstart](https://github.com/auroraomics/deepspot-h-quickstart)**
+  runs DeepSpot-H on one H&E slide, on your own machine.
+- **[deepspot-m-quickstart](https://github.com/auroraomics/deepspot-m-quickstart)**
+  follows one H&E slide to its predicted spatial gene expression, and explores
+  the result.
 
-Two repositories take a slide to a result. Each one is a worked example you can
-run and then lift into your own code.
+## The models behind a prediction
 
-| Repository | What it covers |
-| --- | --- |
-| [deepspot-h-quickstart](https://github.com/auroraomics/deepspot-h-quickstart) | A slide, its tiles, and the embeddings, computed on your own machine. |
-| [deepspot-m-quickstart](https://github.com/auroraomics/deepspot-m-quickstart) | Embeddings or a slide to virtual spatial transcriptomics, then spatial expression, UMAP and clustering. |
+**DeepSpot-H** is the foundation model for H&E images.
+[Learn about DeepSpot-H](https://docs.auroraomics.org/models/deepspot-h/).
 
-New to the platform? [Install and prepare a slide](https://docs.auroraomics.org/quickstart/)
-is the first page of the documentation, and
-[Send a slide, get a result](https://docs.auroraomics.org/first-prediction/)
-is the path end to end.
+**DeepSpot-M** is the model that predicts spatial gene expression.
+[Learn about DeepSpot-M](https://docs.auroraomics.org/models/deepspot-m/), or
+[read the paper](https://www.medrxiv.org/content/10.64898/2026.06.19.26356060v1).
 
-## The two models
+## Choose the workflow that fits your research
 
-**DeepSpot-H** is the foundation model for H&E images. It turns each tile of
-your slide into one embedding.
-[What DeepSpot-H reads and returns](https://docs.auroraomics.org/models/deepspot-h/).
+- **[Send your slides](https://docs.auroraomics.org/quickstart/).** Prepare
+  your H&E slide on your own machine and send its tiles.
+- **[Your slides stay with you](https://docs.auroraomics.org/guides/embeddings/).**
+  Run DeepSpot-H on your own machine and send the numbers it produces.
 
-**DeepSpot-M** is the model that predicts spatial gene expression. It turns
-those embeddings into spatial gene expression.
-[What DeepSpot-M reads and returns](https://docs.auroraomics.org/models/deepspot-m/).
+[From slide to result](https://docs.auroraomics.org/first-prediction/) follows
+one H&E slide to its spatial gene expression result.
 
-## Choose how your data reaches us
+---
 
-DeepSpot-H can run on your machine or on ours. DeepSpot-M only ever runs on
-ours. That choice is what the two routes are.
-
-**Your slides stay with you.** Run DeepSpot-H on your own machine and send the
-numbers it produces. Every image stays local.
-
-What leaves is a few hundred numbers per tile, the tile's position and the
-quality measurements that kept it.
-[Run DeepSpot-H locally](https://docs.auroraomics.org/guides/embeddings/).
-
-**Send your slides.** Send image tiles when images may leave your machine.
-Aurora handles the model-side processing when the catalogue lists a compatible
-model. [Check whether your slide fits](https://docs.auroraomics.org/use-cases/is-this-for-my-slide/).
-
-## Access
-
-Analysis is for academic and non-profit research. Commercial evaluation and use
-run under a separate written agreement, which starts at
-[auroraomics.org/contact](https://auroraomics.org/contact).
-
-The hosted API takes a key. A key is minted for an account granted programmatic
-access that has accepted the current Terms.
-
-A request is reviewed by a person, and preparing a sample needs no account. The
-two run side by side.
-
-[Get access](https://docs.auroraomics.org/get-access/) is the whole procedure.
-[Limits](https://docs.auroraomics.org/limits/) states every quota counter and
-size cap a key is held to.
-
-## Where to go
-
-| | |
-| --- | --- |
-| Website | <https://auroraomics.org> |
-| Documentation | <https://docs.auroraomics.org> |
-| API | <https://api.auroraomics.org/v1/> |
-| Platform status | <https://auroraomics.org/api/health> |
-| Try it on a prepared sample | <https://auroraomics.org/demo> |
-| Whole documentation site in one fetch | <https://docs.auroraomics.org/llms.txt> |
-
-## Papers and data
-
-- [DeepSpot-M: a multimodal foundation model for transcriptome-wide virtual
-  spatial transcriptomics from histology](https://www.medrxiv.org/content/10.64898/2026.06.19.26356060v1).
-  The model behind Aurora. medRxiv, 2026.
-- [DeepSpot: Leveraging Spatial Context for Enhanced Spatial Transcriptomics
-  Prediction from H&E Images](https://www.medrxiv.org/content/10.1101/2025.02.09.25321567).
-  The predecessor method. medRxiv, 2025.
-- [TCGA Virtual Spatial Transcriptomics Atlas](https://huggingface.co/datasets/ratschlab/TCGA_virtual_spatial_transcriptomics_atlas).
-  12TB and 295M+ spots, predicted from H&E with DeepSpot-M.
-
-## Licensing
-
-Example code in the quickstart repositories above is MIT, so you can lift a cell
-into your own analysis.
-
-The `auroraomics` package is published under a non-commercial licence, which the
-[documentation names and links](https://docs.auroraomics.org/quickstart/). Model
-weights carry their own separate terms, which the model's card names.
-
-## Responsible use
-
-[Responsible use](https://docs.auroraomics.org/responsible-use/) states the
-conditions the Terms attach to every result.
-
-[Privacy and retention](https://docs.auroraomics.org/privacy/) states what is
-stored, for how long, and what deleting a job removes.
+For research use only. Aurora is not a medical device.
+[Terms apply](https://auroraomics.org/terms).
